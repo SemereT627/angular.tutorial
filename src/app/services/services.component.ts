@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-services',
@@ -11,26 +12,13 @@ import { Component } from '@angular/core';
   styles: [``],
 })
 export class ServicesComponent {
-  public employees = [
-    {
-      id: 1,
-      name: 'Andrew',
-      age: 30,
-    },
-    {
-      id: 2,
-      name: 'Brandon',
-      age: 25,
-    },
-    {
-      id: 3,
-      name: 'Christina',
-      age: 26,
-    },
-    {
-      id: 4,
-      name: 'Elena',
-      age: 28,
-    },
-  ];
+  constructor(private _employeeService: EmployeeService) {
+    this.employees = this._employeeService.getEmployees();
+  }
+
+  public employees: {
+    id: number;
+    name: string;
+    age: number;
+  }[] = [];
 }

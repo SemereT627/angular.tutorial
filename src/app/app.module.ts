@@ -10,11 +10,20 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { PipesComponent } from './pipes/pipes.component';
 import { ServicesComponent } from './services/services.component';
 import { ServiceListComponent } from './service-list/service-list.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent, TwowaybindingComponent, StructuralDirectivesComponent, PipesComponent, ServicesComponent, ServiceListComponent],
+  declarations: [
+    AppComponent,
+    TestComponent,
+    TwowaybindingComponent,
+    StructuralDirectivesComponent,
+    PipesComponent,
+    ServicesComponent,
+    ServiceListComponent,
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
