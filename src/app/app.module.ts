@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
+import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent, TwowaybindingComponent],
+  declarations: [AppComponent, TestComponent, TwowaybindingComponent, StructuralDirectivesComponent],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
