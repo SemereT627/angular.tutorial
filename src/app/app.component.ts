@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   public name = 'Semere';
-  public message = '';
+  public message = 'Welcome - From App Component';
 }
