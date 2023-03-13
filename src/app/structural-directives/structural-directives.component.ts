@@ -3,6 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-structural-directives',
   template: `
+    <div *ngFor="let color of colors; index as i">
+      <h2>{{ i }} {{ color }}</h2>
+    </div>
+
     <div [ngSwitch]="color">
       <div *ngSwitchCase="'red'">You picked a red color</div>
       <div *ngSwitchCase="'blue'">You picked a blue color</div>
@@ -21,6 +25,8 @@ import { Component } from '@angular/core';
   styles: [``],
 })
 export class StructuralDirectivesComponent {
+  public colors = ['red', 'blue', 'green', 'yellow'];
+
   public displayName = true;
   public color = '';
 }
