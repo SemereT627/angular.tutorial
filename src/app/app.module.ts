@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent, TwowaybindingComponent, StructuralDirectivesComponent],
+  declarations: [AppComponent, TestComponent, TwowaybindingComponent, StructuralDirectivesComponent, PipesComponent],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  template: `<h2 [class]="successClass">Welcome {{ name }}</h2>
+  template: `
+    <h2>Hello {{ nameFrom }}</h2>
+
+    <button (click)="fireEvent()">Send Event</button>
+
+    <h2 [class]="successClass">Welcome {{ name }}</h2>
     <input [id]="myId" type="text" value="Semere" />
     <input [disabled]="isDisabled" type="text" value="Semere" />
     <h2 class="text-special" [class]="successClass">Codevoluton</h2>
@@ -16,7 +21,8 @@ import { Component } from '@angular/core';
     <button (click)="onClick($event)">Greet</button>
 
     <input #myInput type="text" />
-    <button (click)="logMessage(myInput)">Log</button> `,
+    <button (click)="logMessage(myInput)">Log</button>
+  `,
   styles: [
     `
       .text-success {
@@ -34,6 +40,14 @@ import { Component } from '@angular/core';
   ],
 })
 export class TestComponent {
+  @Input('parentData') public nameFrom: any;
+
+  @Output() public childEvent = new EventEmitter();
+
+  fireEvent() {
+    this.childEvent.emit('Hey CodeEvolution');
+  }
+
   public name = 'Semere';
   public myId = 'testId';
   public isDisabled = true;
