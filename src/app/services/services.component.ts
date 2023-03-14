@@ -13,7 +13,9 @@ import { EmployeeService } from '../employee.service';
 })
 export class ServicesComponent {
   constructor(private _employeeService: EmployeeService) {
-    this.employees = this._employeeService.getEmployees();
+    this._employeeService
+      .getEmployees()
+      .subscribe((data) => (this.employees = data));
   }
 
   public employees: {
